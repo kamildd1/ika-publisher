@@ -2,6 +2,7 @@ package com.ikea.publisher.controller;
 
 
 import com.ikea.publisher.model.Competition;
+import com.ikea.publisher.model.Payment;
 import com.ikea.publisher.model.Player;
 import com.ikea.publisher.service.storage.DataStorage;
 import lombok.AllArgsConstructor;
@@ -28,5 +29,11 @@ public class StorageController {
     public void storageCompetition(@RequestBody Competition competition) {
         dataStorage.createDataForCompetition(competition);
         log.info("Competition data was stored successfully: " + competition.toJson());
+    }
+
+    @RequestMapping(value = "/save/payment", method = RequestMethod.POST)
+    public void storageCompetition(@RequestBody Payment payment) {
+        dataStorage.savePayment(payment);
+        log.info("Payment data was stored successfully: " + payment.toJson());
     }
 }

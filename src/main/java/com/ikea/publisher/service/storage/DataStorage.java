@@ -2,6 +2,7 @@ package com.ikea.publisher.service.storage;
 
 
 import com.ikea.publisher.model.Competition;
+import com.ikea.publisher.model.Payment;
 import com.ikea.publisher.model.Player;
 
 public interface DataStorage {
@@ -11,4 +12,6 @@ public interface DataStorage {
     void createDataForCompetition(Competition competition);
 
     Player getData(String id);
+
+    void savePayment(Payment payment);
 }

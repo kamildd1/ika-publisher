@@ -24,6 +24,9 @@ public class Player {
 
     public InputStream photo;
 
+    public Player(String jan, String kowalski, String cc, String s, String m) {
+    }
+
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("firstName", firstName);
