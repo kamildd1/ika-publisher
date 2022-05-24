@@ -1,17 +1,30 @@
 package com.ikea.publisher.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import net.minidev.json.JSONObject;
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.*;
 import java.io.InputStream;
-import java.util.Date;
+import java.sql.Date;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@Entity
 public class Player {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public long idPayments;
+
+    public long id;
+    @OneToOne(mappedBy = "player", cascade = CascadeType.ALL)
     public String firstName;
 
+    @OneToOne(mappedBy = "player", cascade = CascadeType.ALL)
     public String lastName;
 
     public Date dateOfBirth;
@@ -24,11 +37,14 @@ public class Player {
 
     public InputStream photo;
 
-    public Player(String jan, String kowalski, String cc, String s, String m) {
+    public Player() {
+
     }
 
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
+        json.put("idPayments", idPayments);
+        json.put("id", id);
         json.put("firstName", firstName);
         json.put("lastName", lastName);
         //json.put("dateOfBirth", dateOfBirth);

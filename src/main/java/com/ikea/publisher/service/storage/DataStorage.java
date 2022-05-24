@@ -13,5 +13,5 @@ public interface DataStorage {
 
     Player getData(String id);
 
-    void savePayment(Payment payment);
+    void createDataForPayment(Payment payment);
 }

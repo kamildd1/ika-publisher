@@ -16,7 +16,6 @@ public class DataStorageImpl implements DataStorage {
 
     private PlayerStorageRepository playerStorageRepository;
     private CompetitionStorageRepository competitionStorageRepository;
-
     private PaymentStorageRepository paymentStorageRepository;
 
     @Override
@@ -48,7 +47,7 @@ public class DataStorageImpl implements DataStorage {
     }
 
     @Override
-    public void savePayment(Payment payment) {
+    public void createDataForPayment(Payment payment) {
         try {
             paymentStorageRepository.save(payment);
         } catch (Exception ex) {

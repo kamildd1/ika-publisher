@@ -33,7 +33,7 @@ public class StorageController {
 
     @RequestMapping(value = "/save/payment", method = RequestMethod.POST)
     public void storageCompetition(@RequestBody Payment payment) {
-        dataStorage.savePayment(payment);
+        dataStorage.createDataForPayment(payment);
         log.info("Payment data was stored successfully: " + payment.toJson());
     }
 }

@@ -16,7 +16,7 @@ public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    public long idPayments;
     @OneToOne(mappedBy = "player", cascade = CascadeType.ALL)
     public String firstName;
 
@@ -25,11 +25,13 @@ public class Payment {
 
     public int price;
 
+    public String club;
+
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
-        json.put("id", id);
+        json.put("id", idPayments);
         json.put("firstName", firstName);
-        json.put("lastName", lastName);
+        json.put("club", club);
         json.put("price", price);
         return json;
     }
