@@ -22,8 +22,7 @@ public class Payment {
 
     @OneToOne(mappedBy = "player", cascade = CascadeType.ALL)
     public String lastName;
-
-    public int price;
+    public long price;
 
     public String club;
 
@@ -31,8 +30,9 @@ public class Payment {
         JSONObject json = new JSONObject();
         json.put("id", idPayments);
         json.put("firstName", firstName);
+        json.put("lastName", lastName);
         json.put("club", club);
         json.put("price", price);
         return json;
     }
-    }
+}

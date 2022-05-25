@@ -1,39 +1,48 @@
 package com.ikea.publisher;
 
+import com.ikea.publisher.model.Payment;
+import com.ikea.publisher.model.Player;
+import com.ikea.publisher.service.storage.CompetitionStorageRepository;
+import com.ikea.publisher.service.storage.DataStorageImpl;
+import com.ikea.publisher.service.storage.PaymentStorageRepository;
+import com.ikea.publisher.service.storage.PlayerStorageRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
-@SpringBootTest
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
+@RunWith(MockitoJUnitRunner.class)
 class PublisherApplicationTests {
 
+	@InjectMocks
+	private DataStorageImpl dataStorage;
 
-//	@Mock
-//	private DataStorageImpl dataStorageImpl;
-//
-//	@InjectMocks
-//	DataStorage data = new DataStorage() {
-//		@Override
-//		public void createDataForPlayer(Player player) {
-//
-//		}
-//
-//		@Override
-//		public void createDataForCompetition(Competition competition) {
-//
-//		}
-//
-//		@Override
-//		public Player getData(String id) {
-//			return null;
-//		}
+	@Mock
+	private CompetitionStorageRepository competitionStorageRepository;
 
-	@Test
-	void contextLoads() {
-	}
-};
+	@Mock
+	private PaymentStorageRepository paymentStorageRepository;
+
+	@Mock
+	private PlayerStorageRepository playerStorageRepository;
+
+	@Mock
+	private Player player;
+
+	@Mock
+	private Payment payment;
+
 //	@Test
-//	void checkPlayer(Player player){
-//		data.createDataForPlayer(player);
-//
+//	public void savePlayer(){
+//		//given
+//		InputStream testInputStream = new ByteArrayInputStream("test photo".getBytes());
+//		player = new Player(1500, 2000, "Testowy Kuba", "Test", 22-10-1980, "Warszawa", "Ostatnie", "Mężczyzna", testInputStream);
+//		paymentStorageRepository.save(player);
 //	}
-//}
+
+
+}
