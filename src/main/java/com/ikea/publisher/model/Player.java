@@ -27,7 +27,7 @@ public class Player {
     @OneToOne(mappedBy = "player", cascade = CascadeType.ALL)
     public String lastName;
 
-    public Date dateOfBirth;
+     public Date dateOfBirth;
 
     public String club;
 

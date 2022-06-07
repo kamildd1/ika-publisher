@@ -1,5 +1,6 @@
 package com.ikea.publisher.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import net.minidev.json.JSONObject;
@@ -12,6 +13,7 @@ import java.util.Date;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Competition {
 
     @Id
