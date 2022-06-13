@@ -8,8 +8,8 @@ import org.springframework.data.annotation.Id;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import java.io.InputStream;
-import java.util.Date;
+import java.math.BigInteger;
+
 
 @Getter
 @Setter
@@ -18,7 +18,7 @@ public class Competition {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long idPayments;
+    public BigInteger idPayments;
 
     public long id;
     public String category;

@@ -5,9 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import net.minidev.json.JSONObject;
+import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.InputStream;
+import java.math.BigInteger;
 import java.util.Date;
 
 @Getter
@@ -15,9 +17,9 @@ import java.util.Date;
 @AllArgsConstructor
 public class Player {
 
-
-
-    public long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public BigInteger id;
     @OneToOne(mappedBy = "player", cascade = CascadeType.ALL)
     public String firstName;
 
