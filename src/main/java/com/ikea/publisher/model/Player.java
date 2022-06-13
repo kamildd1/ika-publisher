@@ -27,8 +27,8 @@ public class Player {
     public String lastName;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-//    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
+  //  @JsonFormat(shape = JsonFormat.Shape.STRING)
     public Date dateOfBirth;
 
     public String club;
