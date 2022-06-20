@@ -1,79 +1,33 @@
 package com.ikea.publisher;
 
-import com.ikea.publisher.model.Competition;
 import com.ikea.publisher.model.Payment;
-import com.ikea.publisher.model.Player;
-import com.ikea.publisher.service.storage.CompetitionStorageRepository;
-import com.ikea.publisher.service.storage.DataStorageImpl;
 import com.ikea.publisher.service.storage.PaymentStorageRepository;
-import com.ikea.publisher.service.storage.PlayerStorageRepository;
-import com.mongodb.lang.Nullable;
-import com.sun.istack.NotNull;
-import net.minidev.json.JSONObject;
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.stubbing.Answer;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-
-@RunWith(MockitoJUnitRunner.class)
-//@RunWith(SpringRunner.class)
+@ExtendWith(MockitoExtension.class)
 class PublisherApplicationTests {
 
-	@InjectMocks
-	private DataStorageImpl dataStorage;
+    @Mock
+    private PaymentStorageRepository paymentStorageRepository;
 
-	@MockBean
-	private CompetitionStorageRepository competitionStorageRepository;
+    @Test
+    public void savePayment() {
+		Payment payment1 = new Payment(62, "Test", 299, "PLN", "20-06-2022 09:50:00");
 
-	@MockBean
-	private PaymentStorageRepository paymentStorageRepository;
+        //given
+        Answer<Payment> answer = invocationOnMock -> payment1;
+        Mockito.when(paymentStorageRepository.save(payment1)).then(answer);
 
-	@MockBean
-	private PlayerStorageRepository playerStorageRepository;
+		//when
+        Payment payment = paymentStorageRepository.save(payment1);
 
-	@MockBean
-	private Player player;
-
-	@MockBean
-	private Payment payment;
-
-	@MockBean
-	private Competition competition;
-
-//	@Test
-//	public void savePlayer(){
-//		InputStream testInputStream = new ByteArrayInputStream("test photo".getBytes());
-//		player = new Player(1500, 2000, "Testowy Kuba", "Test", "Warszawa", "Ostatnie", "Mężczyzna", testInputStream);
-//		player.toString();
-//		Mockito.when(playerStorageRepository.save(player)).thenReturn(player);
-//		playerStorageRepository.save(player);
-//		Assertions.assertNotNull(playerStorageRepository);
-
-//		player = playerStorageRepository.save(new Player(1500, 2000, "Testowy Kuba", "Test", "Warszawa", "Ostatnie", "Mężczyzna", testInputStream));
-//		Assertions.assertNotNull(playerStorageRepository);
-//	}
-
-//	@Test
-//	public void savePayment(){
-//		payment = new Payment(200, "Testowy", "Patryk", 200, "Mazowsze");
-//		paymentStorageRepository.save(payment);
-//		Assertions.assertNotNull(paymentStorageRepository);
-//	}
-//
-//	@Test
-//	public void saveCompetition(){
-//		competition = new Competition(120, 100, "category", "M", "test", "test");
-//		competitionStorageRepository.save(competition);
-//		Assertions.assertNotNull(competitionStorageRepository);
-//	}
+		//then
+		Assertions.assertEquals(payment1, payment);
+    }
 }
