@@ -1,6 +1,5 @@
 package com.ikea.publisher.controller;
 
-
 import com.ikea.publisher.model.Competition;
 import com.ikea.publisher.model.Payment;
 import com.ikea.publisher.model.Player;

@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import net.minidev.json.JSONObject;
 import org.springframework.data.annotation.Id;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import java.math.BigInteger;
@@ -28,6 +27,9 @@ public class Competition {
     public String vintage;
 
     public String lastName;
+
+    public Competition(int i, int i1, String category, String sex, String vintage, String lastName) {
+    }
 
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
