@@ -1,6 +1,8 @@
 package com.ikea.publisher.model;
 
+import com.ikea.publisher.DateTime;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import net.minidev.json.JSONObject;
@@ -11,23 +13,22 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 public class Payment {
 
+    private DateTime dateTime;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public BigInteger idPayments;
     @OneToOne(mappedBy = "player", cascade = CascadeType.ALL)
     public String firstName;
-    public long price;
+    public Long price;
     public String typeOfPrice;
 
-    public LocalDateTime dateTime;
+    public LocalDateTime dateTimeActual;
     public String dateAndTime;
-
-    public Payment(int i, String test, int price, String pln, String s) {
-    }
 
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
@@ -35,7 +36,7 @@ public class Payment {
         json.put("firstName", firstName);
         json.put("price", price);
         json.put("typeOfPrice", typeOfPrice);
-        json.put("dateAndTime", dateAndTime);
+        json.put("dateAndTime", dateTime.getDateTime());
         return json;
     }
 }

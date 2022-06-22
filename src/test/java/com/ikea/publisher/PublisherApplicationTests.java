@@ -13,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.stubbing.Answer;
+import java.math.BigInteger;
 
 @ExtendWith(MockitoExtension.class)
 class PublisherApplicationTests {
@@ -29,36 +30,60 @@ class PublisherApplicationTests {
     @Test
     public void savePayment() {
         //given
-        Payment payment1 = new Payment(62, "Test", 299, "PLN", "20-06-2022 09:50:00");
-        Answer<Payment> answer = invocationOnMock -> payment1;
-        Mockito.when(paymentStorageRepository.save(payment1)).then(answer);
+        Payment payment = Payment.builder()
+                .idPayments(BigInteger.valueOf(62))
+                .firstName("Test")
+                .price(299L)
+                .typeOfPrice("PLN")
+                .dateAndTime("20-06-2022 11:59:59")
+                .build();
+
+        Answer<Payment> answer = invocationOnMock -> payment;
+        Mockito.when(paymentStorageRepository.save(payment)).then(answer);
 		//when
-        Payment payment = paymentStorageRepository.save(payment1);
+        Payment payment1 = paymentStorageRepository.save(payment);
 		//then
-		Assertions.assertEquals(payment1, payment);
+		Assertions.assertEquals(payment, payment1);
     }
 
     @Test
     public void saveCompetition(){
         //given
-        Competition competition1 = new Competition(22, 22, "Junior", "Mężczyzna", "Ostatni", "Kowalski");
-        Answer<Competition> answer = invocationOnMock -> competition1;
-        Mockito.when(competitionStorageRepository.save(competition1)).then(answer);
+        Competition competition = Competition.builder()
+                .idPayments(BigInteger.valueOf(622))
+                .id(12344L)
+                .category("Junior")
+                .sex("Mężczyzna")
+                .vintage("Pierwszy")
+                .lastName("Nowak")
+                .build();
+
+        Answer<Competition> answer = invocationOnMock -> competition;
+        Mockito.when(competitionStorageRepository.save(competition)).then(answer);
         //when
-        Competition competition = competitionStorageRepository.save(competition1);
+        Competition competition1 = competitionStorageRepository.save(competition);
         //then
-        Assertions.assertEquals(competition1, competition);
+        Assertions.assertEquals(competition, competition1);
     }
 
     @Test
     public void savePlayer(){
         //given
-        Player player1 = new Player(552, "Jan", "Kowalski", 20-12-2000, "Warszawa", "Pierwszy", "Mężczyzna");
-        Answer<Player> answer = invocationOnMock -> player1;
-        Mockito.when(playerStorageRepository.save(player1)).then(answer);
+        Player player = Player.builder()
+                .id(BigInteger.valueOf(6222))
+                .firstName("Jan")
+                .lastName("Kowalski")
+                //.dateOfBirth(1999-10-12)
+                .club("Warszawa")
+                .degree("Drugi")
+                .sex("Mężczyzna")
+                .build();
+
+        Answer<Player> answer = invocationOnMock -> player;
+        Mockito.when(playerStorageRepository.save(player)).then(answer);
         //when
-        Player player = playerStorageRepository.save(player1);
+        Player player1 = playerStorageRepository.save(player);
         //then
-        Assertions.assertEquals(player1, player);
+        Assertions.assertEquals(player, player1);
     }
 }
