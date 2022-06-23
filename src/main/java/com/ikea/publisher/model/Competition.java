@@ -6,15 +6,20 @@ import lombok.Getter;
 import lombok.Setter;
 import net.minidev.json.JSONObject;
 import org.springframework.data.annotation.Id;
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import java.math.BigInteger;
 
-
+/**
+ * This class contains the Competition model, fields identifying the Competition
+ */
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
+@Entity
 public class Competition {
 
     @Id
@@ -23,11 +28,8 @@ public class Competition {
 
     public Long id;
     public String category;
-
     public String sex;
-
     public String vintage;
-
     public String lastName;
 
     public JSONObject toJson() {

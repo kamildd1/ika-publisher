@@ -15,6 +15,11 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.stubbing.Answer;
 import java.math.BigInteger;
 
+/**
+ * This class execute the Mock Tests
+ */
+
+// biznesowo
 @ExtendWith(MockitoExtension.class)
 class PublisherApplicationTests {
 
@@ -27,6 +32,9 @@ class PublisherApplicationTests {
     @Mock
     private PlayerStorageRepository playerStorageRepository;
 
+    /**
+     * This method saves the test Payment model to database
+     */
     @Test
     public void savePayment() {
         //given
@@ -46,6 +54,9 @@ class PublisherApplicationTests {
 		Assertions.assertEquals(payment, payment1);
     }
 
+    /**
+     * This method saves the test Competition model to database
+     */
     @Test
     public void saveCompetition(){
         //given
@@ -66,6 +77,9 @@ class PublisherApplicationTests {
         Assertions.assertEquals(competition, competition1);
     }
 
+    /**
+     * This method saves the test Player model to database
+     */
     @Test
     public void savePlayer(){
         //given
