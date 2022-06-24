@@ -1,3 +1,6 @@
+/**
+ * This package includes model for Competition
+ */
 package com.ikea.publisher.model;
 
 import lombok.AllArgsConstructor;
@@ -10,6 +13,7 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Table;
 import java.math.BigInteger;
 
 /**
@@ -20,6 +24,7 @@ import java.math.BigInteger;
 @Builder
 @AllArgsConstructor
 @Entity
+@Table(name = "competition")
 public class Competition {
 
     @Id

@@ -1,3 +1,6 @@
+/**
+ * This package includes repository for Payments
+ */
 package com.ikea.publisher.service.storage;
 
 import com.ikea.publisher.model.Payment;

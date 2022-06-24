@@ -1,6 +1,8 @@
+/**
+ * This package includes model for Player
+ */
 package com.ikea.publisher.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,6 +22,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @Entity
+@Table(name = "player")
 public class Player {
 
     @Id
@@ -30,10 +33,8 @@ public class Player {
     @OneToOne(mappedBy = "player", cascade = CascadeType.MERGE)
     public String lastName;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
     public Date dateOfBirth;
-
-    // naprawic + javadoc w package wszystkich!
+    public String textDate;
     public String club;
     public String degree;
     public String sex;
@@ -43,7 +44,7 @@ public class Player {
         json.put("id", id);
         json.put("firstName", firstName);
         json.put("lastName", lastName);
-        json.put("dateOfBirth", dateOfBirth);
+        json.put("textDate", textDate);
         json.put("club", club);
         json.put("degree", degree);
         json.put("sex", sex);

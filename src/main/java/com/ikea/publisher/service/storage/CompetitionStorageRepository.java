@@ -1,3 +1,6 @@
+/**
+ * This package includes repository for Competitions
+ */
 package com.ikea.publisher.service.storage;
 
 import com.ikea.publisher.model.Competition;

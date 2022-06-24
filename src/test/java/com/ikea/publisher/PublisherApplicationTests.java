@@ -1,3 +1,6 @@
+/**
+ * This package includes tests for application
+ */
 package com.ikea.publisher;
 
 import com.ikea.publisher.model.Competition;
@@ -16,10 +19,8 @@ import org.mockito.stubbing.Answer;
 import java.math.BigInteger;
 
 /**
- * This class execute the Mock Tests
+ * This class execute the Mock Tests, testing connection with database by saving examples model for Payment, Competition and Player
  */
-
-// biznesowo
 @ExtendWith(MockitoExtension.class)
 class PublisherApplicationTests {
 

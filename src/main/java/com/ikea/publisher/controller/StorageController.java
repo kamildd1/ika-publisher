@@ -1,3 +1,6 @@
+/**
+ * This package includes controller for servicing endpoints
+ */
 package com.ikea.publisher.controller;
 
 import com.ikea.publisher.model.Competition;

@@ -1,3 +1,6 @@
+/**
+ * This package includes methods saving data to database
+ */
 package com.ikea.publisher.service.storage;
 
 

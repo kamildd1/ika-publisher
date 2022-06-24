@@ -1,3 +1,6 @@
+/**
+ * This package includes model for Payment
+ */
 package com.ikea.publisher.model;
 
 import lombok.AllArgsConstructor;
@@ -17,6 +20,7 @@ import java.math.BigInteger;
 @Builder
 @AllArgsConstructor
 @Entity
+@Table(name = "payment")
 public class Payment {
 
     @Id

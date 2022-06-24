@@ -1,3 +1,6 @@
+/**
+ * This package includes implementation for DataStorage
+ */
 package com.ikea.publisher.service.storage;
 
 import com.ikea.publisher.model.Competition;
