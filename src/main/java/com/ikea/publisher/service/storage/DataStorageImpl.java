@@ -3,9 +3,7 @@
  */
 package com.ikea.publisher.service.storage;
 
-import com.ikea.publisher.model.Competition;
-import com.ikea.publisher.model.Payment;
-import com.ikea.publisher.model.Player;
+import com.ikea.publisher.model.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -21,6 +19,8 @@ public class DataStorageImpl implements DataStorage {
     private PlayerStorageRepository playerStorageRepository;
     private CompetitionStorageRepository competitionStorageRepository;
     private PaymentStorageRepository paymentStorageRepository;
+
+    private UserStorageRepository userStorageRepository;
 
     /**
      * This method saving the Player model to database
@@ -58,6 +58,15 @@ public class DataStorageImpl implements DataStorage {
             paymentStorageRepository.save(payment);
         } catch (Exception ex) {
             log.error("Filed to save payment to database " + ex.getMessage());
+        }
+    }
+
+    @Override
+    public void createDataForUser(User user){
+        try {
+            userStorageRepository.save(user);
+        } catch (Exception ex){
+            log.error("Field to save user to database" + ex.getMessage());
         }
     }
 }

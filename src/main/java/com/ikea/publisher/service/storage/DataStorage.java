@@ -3,10 +3,7 @@
  */
 package com.ikea.publisher.service.storage;
 
-
-import com.ikea.publisher.model.Competition;
-import com.ikea.publisher.model.Payment;
-import com.ikea.publisher.model.Player;
+import com.ikea.publisher.model.*;
 
 /**
  * Interface contains methods saving data to database
@@ -29,4 +26,6 @@ public interface DataStorage {
      * @param payment Model Payment description a payment
      */
     void createDataForPayment(Payment payment);
+
+    void createDataForUser(User user);
 }
