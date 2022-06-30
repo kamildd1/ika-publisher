@@ -55,6 +55,6 @@ public class StorageController {
     @RequestMapping(value = "/save/user", method = RequestMethod.POST)
     public void storageUser(@RequestBody User user){
         dataStorage.createDataForUser(user);
-        log.info("Admin data was stored successfully: " + user.toJson());
+        log.info("User data was stored successfully: " + user.toJson());
     }
 }
