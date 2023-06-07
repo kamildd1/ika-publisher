@@ -1,9 +1,9 @@
 /**
  * This package includes repository for Players
  */
-package com.ikea.publisher.service.storage;
+package com.ika.publisher.service.storage;
 
-import com.ikea.publisher.model.Player;
+import com.ika.publisher.model.Player;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

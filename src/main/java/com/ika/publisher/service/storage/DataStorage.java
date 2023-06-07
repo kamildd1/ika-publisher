@@ -1,12 +1,12 @@
 /**
  * This package includes methods saving data to database
  */
-package com.ikea.publisher.service.storage;
+package com.ika.publisher.service.storage;
 
 
-import com.ikea.publisher.model.Competition;
-import com.ikea.publisher.model.Payment;
-import com.ikea.publisher.model.Player;
+import com.ika.publisher.model.Competition;
+import com.ika.publisher.model.Payment;
+import com.ika.publisher.model.Player;
 
 /**
  * Interface contains methods saving data to database

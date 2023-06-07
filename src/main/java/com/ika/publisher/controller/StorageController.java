@@ -1,12 +1,12 @@
 /**
  * This package includes controller for servicing endpoints
  */
-package com.ikea.publisher.controller;
+package com.ika.publisher.controller;
 
-import com.ikea.publisher.model.Competition;
-import com.ikea.publisher.model.Payment;
-import com.ikea.publisher.model.Player;
-import com.ikea.publisher.service.storage.DataStorage;
+import com.ika.publisher.model.Competition;
+import com.ika.publisher.model.Payment;
+import com.ika.publisher.model.Player;
+import com.ika.publisher.service.storage.DataStorage;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestBody;

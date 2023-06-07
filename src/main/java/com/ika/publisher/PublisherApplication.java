@@ -1,7 +1,7 @@
 /**
  * This package includes main class application
  */
-package com.ikea.publisher;
+package com.ika.publisher;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

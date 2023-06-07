@@ -1,14 +1,14 @@
 /**
  * This package includes tests for application
  */
-package com.ikea.publisher;
+package com.ika.publisher;
 
-import com.ikea.publisher.model.Competition;
-import com.ikea.publisher.model.Payment;
-import com.ikea.publisher.model.Player;
-import com.ikea.publisher.service.storage.CompetitionStorageRepository;
-import com.ikea.publisher.service.storage.PaymentStorageRepository;
-import com.ikea.publisher.service.storage.PlayerStorageRepository;
+import com.ika.publisher.model.Competition;
+import com.ika.publisher.model.Payment;
+import com.ika.publisher.model.Player;
+import com.ika.publisher.service.storage.CompetitionStorageRepository;
+import com.ika.publisher.service.storage.PaymentStorageRepository;
+import com.ika.publisher.service.storage.PlayerStorageRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

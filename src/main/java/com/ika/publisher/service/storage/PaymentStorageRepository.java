@@ -1,9 +1,9 @@
 /**
  * This package includes repository for Payments
  */
-package com.ikea.publisher.service.storage;
+package com.ika.publisher.service.storage;
 
-import com.ikea.publisher.model.Payment;
+import com.ika.publisher.model.Payment;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

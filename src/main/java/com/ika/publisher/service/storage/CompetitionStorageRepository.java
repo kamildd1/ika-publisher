@@ -1,9 +1,9 @@
 /**
  * This package includes repository for Competitions
  */
-package com.ikea.publisher.service.storage;
+package com.ika.publisher.service.storage;
 
-import com.ikea.publisher.model.Competition;
+import com.ika.publisher.model.Competition;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

@@ -1,11 +1,11 @@
 /**
  * This package includes implementation for DataStorage
  */
-package com.ikea.publisher.service.storage;
+package com.ika.publisher.service.storage;
 
-import com.ikea.publisher.model.Competition;
-import com.ikea.publisher.model.Payment;
-import com.ikea.publisher.model.Player;
+import com.ika.publisher.model.Competition;
+import com.ika.publisher.model.Payment;
+import com.ika.publisher.model.Player;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 /**
  * This package includes model for Competition
  */
-package com.ikea.publisher.model;
+package com.ika.publisher.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
